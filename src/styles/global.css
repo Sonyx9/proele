@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+:root {
+  --brand-red: #d60000;
+  --brand-black: #000000;
+  --brand-dark: #1a1a1a;
+  --brand-light: #f5f5f5;
+  --brand-white: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Manrope", "Plus Jakarta Sans", "DM Sans", "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--brand-black);
+  background: var(--brand-white);
+}
+
+.font-panell {
+  font-family: "Manrope", "Plus Jakarta Sans", "DM Sans", "Segoe UI", sans-serif;
+  letter-spacing: -0.01em;
+  font-weight: 800;
+}
+
+.section-eyebrow {
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brand-red);
+}
+
+/* Brand red utility */
+.btn-brand {
+  background-color: var(--brand-red);
+  color: #fff;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-brand:hover {
+  background-color: #b50000;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(214, 0, 0, 0.28);
+}
+
+.check-brand {
+  background-color: var(--brand-red);
+  color: #fff;
+}
+
+.shadow-soft {
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+.page-gutter {
+  padding-inline: clamp(1rem, 2.8vw, 2.5rem);
+}
+
+@media (min-width: 1280px) {
+  .page-gutter {
+    padding-inline: clamp(2.5rem, 4vw, 4rem);
+  }
+}
+
+.section-divider {
+  border-top: 1px solid var(--brand-red);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.72) 100%
+  );
+}
+
+.hero-overlay-strong {
+  background: linear-gradient(
+    180deg,
+    rgba(5, 13, 22, 0.45) 0%,
+    rgba(7, 16, 26, 0.68) 58%,
+    rgba(7, 16, 26, 0.78) 100%
+  );
+}
+
+.hero-shell {
+  margin-inline: 0;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .hero-shell {
+    margin-inline: 0;
+  }
+}

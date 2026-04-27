@@ -1,0 +1,499 @@
+---
+import "../styles/global.css";
+
+const topNav = [
+  { label: "Služby", href: "#section-a" },
+  { label: "Proč my", href: "#proc-my" },
+  { label: "Reference", href: "#reference" },
+  { label: "FAQ", href: "#faq" },
+  { label: "Kontakt", href: "#kontakt" },
+];
+
+const infoCards = [
+  {
+    title: "Kompletní realizace",
+    text: "Jeden tým od prvního výkresu až po předání revizní dokumentace. Nemusíte koordinovat více dodavatelů – vše řídíme za vás, v termínu a s plnou zodpovědností.",
+    icon: "clipboard"
+  },
+  {
+    title: "Požární bezpečnost",
+    text: "Projektujeme, instalujeme a pravidelně revidujeme požárně bezpečnostní systémy (EPS, SHZ, pasivní PO) v souladu s normami ČSN. Jsme certifikovaní specialisté Hilti.",
+    icon: "shield"
+  }
+];
+
+const transformCards = [
+  {
+    title: "Bytové domy a SVJ",
+    text: "Kompletní elektroinstalace, výměna stoupacích vedení a modernizace společných prostor panelových domů."
+  },
+  {
+    title: "Komerční objekty",
+    text: "Slaboproudé systémy, kamerové systémy CCTV, přístupové systémy a strukturovaná kabeláž pro firemní budovy."
+  },
+  {
+    title: "Průmyslové provozy",
+    text: "Silnoproudé elektroinstalace, rozvaděče a požárně bezpečnostní řešení pro výrobní a skladové objekty."
+  }
+];
+
+const styleMiniCards = [
+  "Nezávazná poptávka zdarma",
+  "Certifikovaný tým specialistů",
+  "Termíny, které dodržujeme"
+];
+
+const heroImageUrl = `${import.meta.env.BASE_URL.replace(/\/?$/, "/")}hero-elektrikar.png`;
+
+const faqSections = [
+  {
+    title: "Revize a legislativa",
+    items: [
+      {
+        question: "Jak často se musí provádět revize elektroinstalace?",
+        answer:
+          "Lhůty se liší podle typu objektu a prostředí. U administrativních budov je standardní lhůta 5 let, u prostor s rizikem výbuchu nebo ve venkovním prostředí jsou lhůty kratší. Rádi vám doporučíme správný interval pro váš objekt."
+      },
+      {
+        question: "Jsou vaše práce v souladu s aktuálními normami ČSN?",
+        answer:
+          "Ano, veškeré naše montáže a projekty odpovídají platným normám ČSN. Po dokončení každé zakázky obdržíte řádnou revizní zprávu podepsanou oprávněným revizním technikem."
+      },
+      {
+        question: "Zpracujete cenovou nabídku zdarma?",
+        answer:
+          "Ano, na základě vaší poptávky nebo prohlídky objektu připravíme nezávaznou kalkulaci na míru – bez závazků a zcela zdarma. Odpovíme do 48 hodin od přijetí poptávky."
+      }
+    ]
+  },
+  {
+    title: "Elektromontáže a slaboproud",
+    items: [
+      {
+        question: "Provádíte kompletní rekonstrukce v panelových domech pro SVJ?",
+        answer:
+          "Ano, specializujeme se na výměnu stoupacích vedení (HDV), rekonstrukci společných prostor i modernizaci osvětlení s využitím úsporných LED technologií. Máme zkušenosti s koordinací prací v obydlených budovách."
+      },
+      {
+        question: "Lze propojit kamerový systém s mobilním telefonem?",
+        answer:
+          "Samozřejmě. Moderní zabezpečovací a kamerové systémy (CCTV), které instalujeme, umožňují vzdálený přístup přes mobilní aplikaci – máte přehled o objektu 24 hodin denně, 7 dní v týdnu."
+      }
+    ]
+  },
+  {
+    title: "Požární bezpečnost",
+    items: [
+      {
+        question: "Musí být v každém bytovém domě instalována EPS?",
+        answer:
+          "Povinnost vychází z požárně bezpečnostního řešení stavby (projektové dokumentace). U novostaveb a větších rekonstrukcí je elektronická požární signalizace již standardem. Rádi vám bezplatně posoudíme, jaké požadavky se na váš objekt vztahují."
+      },
+      {
+        question: "Zajišťujete i následný servis a funkční zkoušky požárních systémů?",
+        answer:
+          "Ano, instalací to pro nás nekončí. Provádíme pravidelné roční kontroly provozuschopnosti a servis všech požárně bezpečnostních zařízení – jsme certifikovaní specialisté na systémy pasivní požární ochrany Hilti."
+      }
+    ]
+  }
+];
+---
+
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PROELE | Elektromontáže a požární bezpečnost</title>
+    <meta name="description" content="Komplexní elektroinstalace a požární bezpečnost pro bytová družstva, SVJ, developery i průmyslové provozy. Certifikovaní specialisté Hilti. Praha a okolí." />
+  </head>
+  <body class="bg-[#efefef] text-black antialiased">
+    <main class="space-y-8 pb-6 md:space-y-10">
+
+      <!-- ===== HERO ===== -->
+      <section
+        id="hero"
+        class="hero-shell relative min-h-[95vh] overflow-hidden bg-cover bg-center"
+      >
+        <img
+          src={heroImageUrl}
+          alt="Elektrikář při práci v rozvodně"
+          class="absolute inset-0 h-full w-full object-cover object-right"
+        />
+        <div class="hero-overlay-strong absolute inset-0"></div>
+
+        <div class="page-gutter relative z-10 flex min-h-[95vh] flex-col pt-7">
+          <!-- Navigace -->
+          <div class="relative flex items-center justify-between">
+            <p class="hero-display text-2xl font-semibold text-white">PROELE</p>
+            <details class="relative">
+              <summary class="flex h-11 w-11 cursor-pointer list-none items-center justify-center rounded-md border border-white/30 bg-black/30 text-white backdrop-blur">
+                <span class="sr-only">Menu</span>
+                <svg viewBox="0 0 24 24" class="h-6 w-6 fill-none stroke-current" stroke-width="2" aria-hidden="true">
+                  <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"></path>
+                </svg>
+              </summary>
+              <div class="absolute right-0 mt-2 w-56 rounded-xl border border-white/20 bg-black/80 p-2 text-white shadow-xl backdrop-blur">
+                <ul class="space-y-1">
+                  {topNav.map((item) => (
+                    <li>
+                      <a href={item.href} class="block rounded-md px-3 py-2 text-sm hover:bg-white hover:text-black">{item.label}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </details>
+          </div>
+
+          <!-- Fixní CTA tlačítka nahoře -->
+          <div class="fixed left-1/2 top-4 z-[60] flex -translate-x-1/2 items-center gap-2 sm:gap-3">
+            <a href="#kontakt" class="btn-brand rounded-md px-3 py-2 text-xs font-semibold shadow-lg sm:px-5 sm:text-sm">Zavolat</a>
+            <a href="#kontakt" class="rounded-md border border-white/25 bg-black/50 px-3 py-2 text-xs font-semibold text-white shadow-lg backdrop-blur hover:bg-white hover:text-black sm:px-5 sm:text-sm">Napsat</a>
+          </div>
+
+          <!-- Hero obsah -->
+          <div class="flex flex-1 items-center pt-20 md:pt-28">
+            <div class="max-w-5xl">
+              <p class="text-[28px] font-medium text-white/90">Od projektu po revizi. Jeden tým, jedna odpovědnost.</p>
+              <h1 class="hero-display mt-3 max-w-4xl text-5xl font-extrabold leading-[1.02] text-white md:text-7xl">
+                Komplexní elektro<br />a požární bezpečnost
+              </h1>
+              <a
+                href="#section-a"
+                class="group mx-auto mt-14 inline-flex items-center gap-3 rounded-xl bg-white px-6 py-3 text-lg font-semibold text-black transition hover:-translate-y-0.5 hover:shadow-lg"
+              >
+                Naše služby
+                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full border border-black transition-transform duration-200 group-hover:translate-x-1">→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Kontaktní box vpravo dole -->
+          <div class="mt-auto mb-6 flex items-end justify-end">
+            <a
+              href="#kontakt"
+              class="group hidden max-w-[20rem] rounded-3xl border border-white/20 bg-black/35 p-4 text-white backdrop-blur transition hover:bg-white hover:text-black md:block"
+            >
+              <p class="text-xs font-medium uppercase tracking-wide text-white/80 transition group-hover:text-black/70">Kontakt</p>
+              <p class="mt-1 text-2xl font-semibold leading-tight">Nezávazná konzultace</p>
+              <p class="mt-2 text-sm text-white/85 transition group-hover:text-black/80">Prohlídka objektu, návrh řešení a cenová nabídka – vše zdarma a do 48 hodin.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SLUŽBY ===== -->
+      <section id="section-a" class="px-4 md:px-6">
+        <div class="page-gutter">
+          <p class="section-eyebrow">Naše odbornost</p>
+          <h2 class="text-center text-2xl font-extrabold leading-[1.15] md:text-4xl">Elektro a požární bezpečnost<br />bez kompromisů</h2>
+          <p class="mx-auto mt-4 max-w-4xl text-center text-sm leading-relaxed text-neutral-700 md:text-base">
+            Zakládáme si na individuálním přístupu a plné odpovědnosti za každou zakázku. Dlouhodobě spolupracujeme s bytovými družstvy, společenstvími vlastníků (SVJ), developery, stavebními firmami i soukromými investory.
+          </p>
+
+          <div class="mt-8 grid items-stretch gap-4 lg:grid-cols-3">
+            <!-- Hlavní karta – červená -->
+            <article class="relative h-full overflow-hidden rounded-3xl text-white">
+              <div class="h-[360px] bg-[linear-gradient(155deg,#D50101_0%,#B40000_45%,#7F0000_100%)]"></div>
+              <div class="absolute inset-0 flex flex-col justify-between p-6">
+                <span class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/60 bg-white/10">
+                  <svg viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current text-white" stroke-width="1.8" aria-hidden="true">
+                    <path d="M13 2 6 13h5l-1 9 8-12h-5l0-8Z" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </span>
+                <div>
+                  <h3 class="max-w-[14rem] text-[34px] font-semibold leading-[1.02]">Silnoproud a slaboproud</h3>
+                  <p class="mt-4 max-w-[18rem] text-sm leading-relaxed text-white/90">
+                    Kompletní elektroinstalace bytových domů, komerčních i průmyslových objektů. Nová zapojení, rekonstrukce i modernizace osvětlení na úsporné LED.
+                  </p>
+                </div>
+                <a
+                  href="#kontakt"
+                  class="group inline-flex w-fit items-center gap-2 rounded-lg bg-white px-4 py-2 text-sm font-semibold text-black transition hover:-translate-y-0.5 hover:shadow-lg"
+                >
+                  Nezávazná poptávka <span class="transition-transform duration-200 group-hover:translate-x-1">→</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Světlé karty -->
+            {infoCards.map((card) => (
+              <article class="flex h-full flex-col rounded-3xl bg-[#e6e6eb] p-6">
+                <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white">
+                  {card.icon === "clipboard" ? (
+                    <svg viewBox="0 0 24 24" class="h-4 w-4 fill-none stroke-current text-black" stroke-width="1.8" aria-hidden="true">
+                      <path d="M9 4h6m-5 0a1 1 0 0 0-1 1v1h6V5a1 1 0 0 0-1-1m-8 3h12a1 1 0 0 1 1 1v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a1 1 0 0 1 1-1Z" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  ) : (
+                    <svg viewBox="0 0 24 24" class="h-4 w-4 fill-none stroke-current text-black" stroke-width="1.8" aria-hidden="true">
+                      <path d="M12 3 5 6v5c0 4.4 3 8.5 7 10 4-1.5 7-5.6 7-10V6l-7-3Z" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  )}
+                </span>
+                <h3 class="mt-5 max-w-[14rem] text-[36px] font-semibold leading-[1.03]">{card.title}</h3>
+                <p class="mt-7 text-sm leading-relaxed text-neutral-700">{card.text}</p>
+                <a
+                  href="#kontakt"
+                  class="group mt-auto inline-flex w-fit items-center gap-2 rounded-lg bg-black px-4 py-2 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-neutral-800 hover:shadow-lg"
+                >
+                  Nezávazná poptávka <span class="transition-transform duration-200 group-hover:translate-x-1">→</span>
+                </a>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== PROČ MY ===== -->
+      <section id="proc-my" class="px-4 md:px-6">
+        <div class="page-gutter grid gap-4 rounded-3xl lg:grid-cols-[1fr_1.35fr]">
+          <article class="rounded-3xl bg-[#e6e6eb] p-8 md:p-12">
+            <p class="section-eyebrow !text-left !mb-4">Proč si vybrat nás</p>
+            <h2 class="text-5xl font-extrabold leading-[1.02] md:text-7xl">Zkušenosti,<br />které mluví<br />za výsledky</h2>
+            <p class="mt-6 max-w-xl text-base leading-relaxed text-neutral-700">
+              Každý projekt řešíme individuálně. Přijdeme, posoudíme situaci, navrhneme optimální řešení a celou realizaci dotáhneme do konce – včas a s veškerou dokumentací.
+            </p>
+            <ul class="mt-8 space-y-3 text-sm font-semibold">
+              <li class="flex items-center gap-2">
+                <span class="check-brand inline-flex h-5 w-5 items-center justify-center rounded-full text-[10px]">✓</span>
+                Certifikovaní specialisté na požární ochranu Hilti
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="check-brand inline-flex h-5 w-5 items-center justify-center rounded-full text-[10px]">✓</span>
+                Termíny dodržujeme – odpovídáme za celý průběh zakázky
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="check-brand inline-flex h-5 w-5 items-center justify-center rounded-full text-[10px]">✓</span>
+                Bezplatná prohlídka objektu a kalkulace do 48 hodin
+              </li>
+            </ul>
+            <a href="#kontakt" class="mt-8 inline-flex items-center gap-2 rounded-xl bg-black px-5 py-3 text-sm font-semibold text-white hover:-translate-y-0.5 transition">Nezávazná konzultace <span>→</span></a>
+          </article>
+
+          <article class="relative overflow-hidden rounded-3xl bg-black">
+            <div class="h-full min-h-[520px] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1400&q=80');"></div>
+            <div class="absolute bottom-6 right-6 flex flex-col gap-3">
+              <div class="rounded-2xl bg-black/40 p-5 text-white backdrop-blur">
+                <p class="text-xs text-white/80">Dokončených projektů</p>
+                <p class="text-5xl font-bold">150 <span class="text-2xl font-normal">+</span></p>
+              </div>
+              <div class="rounded-2xl bg-black/40 p-4 text-white backdrop-blur">
+                <p class="text-sm font-semibold">Více než 10 let<br />v oboru elektro a PBŘ</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== REFERENCE ===== -->
+      <section id="reference" class="px-4 md:px-6">
+        <div class="page-gutter">
+          <p class="section-eyebrow">Reference</p>
+          <h2 class="text-center text-5xl font-extrabold leading-[1.02] md:text-6xl">Projekty,<br />na které jsme hrdí</h2>
+
+          <div class="mt-8 grid gap-4 md:grid-cols-3">
+            {transformCards.map((card, idx) => (
+              <article class="group relative overflow-hidden rounded-3xl text-white shadow-soft">
+                <div
+                  class="h-[300px] bg-cover bg-center transition duration-500 group-hover:scale-105"
+                  style={`background-image: linear-gradient(rgba(0,0,0,.18), rgba(0,0,0,.72)), url('${
+                    idx === 0
+                      ? "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1200&q=80"
+                      : idx === 1
+                        ? "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=80"
+                        : "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80"
+                  }');`}
+                ></div>
+                <div class="absolute inset-x-0 bottom-0 p-4">
+                  <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/20">
+                    <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current text-white" aria-hidden="true">
+                      <path d="M12 2.75 14 8l5.25 2L14 12l-2 5.25L10 12 4.75 10 10 8 12 2.75Z"></path>
+                    </svg>
+                  </span>
+                  <h3 class="mt-3 text-3xl font-semibold leading-tight">{card.title}</h3>
+                  <p class="mt-1 text-xs text-white/80">{card.text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== FAQ ===== -->
+      <section id="faq" class="px-4 md:px-6">
+        <div class="page-gutter rounded-3xl bg-[#e8e8ec] p-6 md:p-10">
+          <p class="section-eyebrow">Nejčastější dotazy</p>
+          <h2 class="text-center text-2xl font-extrabold leading-[1.15] md:text-4xl">Vše důležité na jednom místě</h2>
+          <p class="mx-auto mt-4 max-w-3xl text-center text-sm leading-relaxed text-neutral-700 md:text-base">
+            Připravili jsme odpovědi na nejčastější otázky z oblasti revizí, elektromontáží, slaboproudých systémů i požárně bezpečnostních řešení.
+          </p>
+
+          <div class="mt-8 grid gap-4 lg:grid-cols-3">
+            {faqSections.map((section) => (
+              <article class="rounded-3xl bg-white p-5 shadow-soft md:p-6">
+                <h3 class="text-lg font-bold leading-tight text-neutral-900">{section.title}</h3>
+                <div class="mt-5 space-y-4">
+                  {section.items.map((item) => (
+                    <details class="group rounded-2xl border border-neutral-200 bg-neutral-50 p-4 open:bg-white">
+                      <summary class="flex cursor-pointer list-none items-start justify-between gap-3 text-sm font-semibold leading-snug text-neutral-900">
+                        <span>{item.question}</span>
+                        <span class="text-base leading-none text-neutral-500">+</span>
+                      </summary>
+                      <p class="mt-3 border-t border-neutral-200 pt-3 text-sm leading-relaxed text-neutral-700">
+                        {item.answer}
+                      </p>
+                    </details>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== CTA SEKCE ===== -->
+      <section id="kontakt-cta" class="px-4 md:px-6">
+        <div class="page-gutter relative overflow-hidden rounded-3xl bg-cover bg-center" style="background-image: linear-gradient(rgba(7,16,26,.55), rgba(7,16,26,.78)), url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1800&q=80');">
+          <div class="px-6 py-20 text-center text-white md:px-10">
+            <p class="section-eyebrow !text-white/75">Začněte ještě dnes</p>
+            <h2 class="text-5xl font-extrabold leading-[1.02] md:text-6xl">Bezplatná konzultace<br />a nabídka do 48 hodin</h2>
+            <p class="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/80 md:text-base">
+              Popište nám váš projekt a my se ozveme nejpozději do dvou pracovních dnů s konkrétním návrhem a kalkulací.
+            </p>
+            <a href="#kontakt" class="mt-6 inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-black hover:-translate-y-0.5 transition">Kontaktovat nás <span>→</span></a>
+          </div>
+          <div class="grid gap-3 px-6 pb-7 md:grid-cols-3 md:px-10">
+            {styleMiniCards.map((item) => <div class="rounded-2xl bg-black/35 p-4 text-left text-sm font-medium text-white backdrop-blur">{item}</div>)}
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== REFERENCE / TESTIMONIAL ===== -->
+      <section class="px-4 md:px-6">
+        <div class="page-gutter grid w-full gap-4 md:grid-cols-[1.9fr_1fr]">
+          <article class="rounded-3xl bg-[#e8e8ec] p-6 md:p-8">
+            <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white text-sm font-semibold">"</span>
+            <p class="mt-6 max-w-4xl text-2xl leading-relaxed text-neutral-900 md:text-[2rem]">
+              Proelle zajistila kompletní rekonstrukci elektroinstalace v naší bytové sekci. Profesionální přístup, čistá práce a vše odevzdáno přesně v termínu. Bez zbytečného stresu a s kompletní dokumentací.
+            </p>
+            <div class="mt-10 flex items-end justify-between gap-4">
+              <div class="flex items-center gap-3">
+                <div class="h-10 w-10 rounded-full bg-cover bg-center bg-neutral-400" style="background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80');"></div>
+                <div>
+                  <p class="text-xs font-semibold">Mgr. Jana Nováková</p>
+                  <p class="text-[11px] text-neutral-600">Předsedkyně SVJ, Praha 9</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-1">
+                <button class="inline-flex h-8 w-8 items-center justify-center rounded-md bg-white text-black">←</button>
+                <button class="inline-flex h-8 w-8 items-center justify-center rounded-md bg-black text-white">→</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="relative overflow-hidden rounded-3xl bg-black">
+            <div class="h-full min-h-[340px] bg-cover bg-center" style="background-image: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.36)), url('https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1000&q=80');"></div>
+            <p class="absolute right-4 top-4 text-xs font-medium text-white/85">1 / 5</p>
+            <span class="absolute right-12 top-4 h-3 w-3 rounded-full border border-white/70"></span>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== KONTAKT ===== -->
+      <section id="kontakt" class="px-4 md:px-6">
+        <div class="page-gutter rounded-3xl bg-[#e6e6eb] p-8 md:p-12">
+          <p class="section-eyebrow">Kontakt</p>
+          <h2 class="text-center text-2xl font-extrabold leading-[1.15] md:text-4xl">Napište nebo zavolejte</h2>
+          <p class="mx-auto mt-4 max-w-2xl text-center text-sm leading-relaxed text-neutral-700 md:text-base">
+            Rádi zodpovíme vaše otázky, domluvíme bezplatnou prohlídku objektu a připravíme cenovou nabídku na míru.
+          </p>
+          <form
+            action="https://formspree.io/f/your-form-id"
+            method="POST"
+            class="mx-auto mt-8 max-w-xl space-y-4"
+          >
+            <div class="grid gap-4 sm:grid-cols-2">
+              <input
+                type="text"
+                name="name"
+                placeholder="Vaše jméno"
+                required
+                class="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm placeholder-neutral-400 focus:border-black focus:outline-none"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="E-mailová adresa"
+                required
+                class="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm placeholder-neutral-400 focus:border-black focus:outline-none"
+              />
+            </div>
+            <input
+              type="text"
+              name="subject"
+              placeholder="Typ objektu nebo služby (nepovinné)"
+              class="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm placeholder-neutral-400 focus:border-black focus:outline-none"
+            />
+            <textarea
+              name="message"
+              placeholder="Popište váš projekt nebo dotaz..."
+              rows="4"
+              required
+              class="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm placeholder-neutral-400 focus:border-black focus:outline-none resize-none"
+            ></textarea>
+            <button
+              type="submit"
+              class="btn-brand w-full rounded-xl px-6 py-3 text-sm font-semibold"
+            >
+              Odeslat poptávku
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- ===== FOOTER ===== -->
+      <section class="px-4 pb-2 md:px-6">
+        <footer class="page-gutter w-full rounded-3xl bg-[#0f1218] px-6 py-8 text-white md:px-10">
+          <div class="grid gap-8 md:grid-cols-4">
+            <div>
+              <h3 class="text-2xl font-semibold" style="border-left: 3px solid #d60000; padding-left: 0.6rem;">PROELE</h3>
+              <p class="mt-2 text-xs text-white/70 leading-relaxed">Profesionální elektromontáže a požární bezpečnost pro bytová družstva, SVJ, developery i průmyslové provozy.</p>
+              <div class="mt-4 flex items-center gap-2">
+                <a href="#" aria-label="Facebook" class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/25 text-xs hover:bg-white/10">f</a>
+                <a href="#" aria-label="LinkedIn" class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/25 text-xs hover:bg-white/10">in</a>
+              </div>
+            </div>
+            <div>
+              <h4 class="text-sm font-semibold">Navigace</h4>
+              <ul class="mt-3 space-y-2 text-xs text-white/75">
+                <li><a href="#hero" class="hover:text-white">Úvod</a></li>
+                <li><a href="#section-a" class="hover:text-white">Služby</a></li>
+                <li><a href="#reference" class="hover:text-white">Reference</a></li>
+                <li><a href="#faq" class="hover:text-white">FAQ</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-sm font-semibold">Informace</h4>
+              <ul class="mt-3 space-y-2 text-xs text-white/75">
+                <li><a href="#kontakt" class="hover:text-white">Kontakt</a></li>
+                <li><a href="#" class="hover:text-white">Ochrana osobních údajů</a></li>
+                <li><a href="#" class="hover:text-white">Obchodní podmínky</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-sm font-semibold">Firma</h4>
+              <ul class="mt-3 space-y-2 text-xs text-white/75">
+                <li>PROELE instal s.r.o.</li>
+                <li>IČO: 23959851</li>
+                <li>Beranových 826</li>
+                <li>199 00 Praha 9</li>
+              </ul>
+            </div>
+          </div>
+          <p class="mt-8 border-t border-white/10 pt-4 text-center text-xs text-white/60">© 2025 PROELE instal s.r.o. – Všechna práva vyhrazena.</p>
+        </footer>
+      </section>
+
+    </main>
+  </body>
+</html>
