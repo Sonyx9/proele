@@ -90,18 +90,92 @@ body {
 }
 
 .hero-overlay-strong {
-  background: linear-gradient(
-    180deg,
-    rgba(5, 13, 22, 0.45) 0%,
-    rgba(7, 16, 26, 0.68) 58%,
-    rgba(7, 16, 26, 0.78) 100%
-  );
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5, 13, 22, 0.55) 0%,
+      rgba(5, 13, 22, 0.15) 18%,
+      rgba(7, 16, 26, 0.35) 65%,
+      rgba(7, 16, 26, 0.72) 100%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(5, 13, 22, 0.7) 0%,
+      rgba(5, 13, 22, 0.4) 45%,
+      rgba(5, 13, 22, 0) 75%
+    );
 }
 
 .hero-shell {
   margin-inline: 0;
   border-radius: 0;
   overflow: hidden;
+}
+
+.site-header {
+  transition: background-color 0.25s ease, backdrop-filter 0.25s ease,
+    box-shadow 0.25s ease, border-color 0.25s ease;
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+}
+.site-header.is-scrolled {
+  background-color: rgba(7, 16, 26, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+}
+
+.site-logo {
+  transition: filter 0.25s ease;
+}
+.site-header.is-scrolled .site-logo,
+.footer-logo {
+  filter: brightness(0) invert(1);
+}
+
+.partner-logo {
+  filter: grayscale(1);
+  opacity: 0.85;
+  transition: filter 0.25s ease, opacity 0.25s ease;
+}
+.partner-logo:hover {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+.photo-placeholder {
+  position: relative;
+  background-color: #cbcbd1;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.35) 0,
+    rgba(255, 255, 255, 0.35) 14px,
+    rgba(0, 0, 0, 0.08) 14px,
+    rgba(0, 0, 0, 0.08) 28px
+  );
+}
+.photo-placeholder::after {
+  content: "Vygenerovat foto";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.5rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+}
+.photo-placeholder--avatar::after {
+  font-size: 0.5rem;
+  letter-spacing: 0.04em;
+  padding: 0.15rem;
 }
 
 @media (min-width: 768px) {
