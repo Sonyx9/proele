@@ -169,8 +169,8 @@ const faqSections = [
         </a>
         <div class="flex items-center gap-2 sm:gap-3">
           <a href="tel:+420777123456" class="btn-brand inline-flex h-12 items-center rounded-lg px-4 text-sm font-semibold shadow-lg sm:hidden">Zavolat</a>
-          <a href="#kontakt" class="btn-brand hidden h-12 items-center rounded-lg px-5 text-sm font-semibold shadow-lg sm:inline-flex md:h-14 md:px-6">Zavolat</a>
-          <a href="#kontakt" class="hidden h-12 items-center rounded-lg border border-white/25 bg-black/50 px-4 text-sm font-semibold text-white shadow-lg backdrop-blur hover:bg-white hover:text-black sm:inline-flex sm:px-5 md:h-14 md:px-6">Napsat</a>
+          <a href="#kontakt-telefon" class="btn-brand hidden h-12 items-center rounded-lg px-5 text-sm font-semibold shadow-lg sm:inline-flex md:h-14 md:px-6">Zavolat</a>
+          <a href="mailto:info@proele.cz" class="hidden h-12 items-center rounded-lg border border-white/25 bg-black/50 px-4 text-sm font-semibold text-white shadow-lg backdrop-blur hover:bg-white hover:text-black sm:inline-flex sm:px-5 md:h-14 md:px-6">Napsat</a>
           <details class="relative">
             <summary class="flex h-12 w-12 cursor-pointer list-none items-center justify-center rounded-lg border border-white/30 bg-black/30 text-white backdrop-blur md:h-14 md:w-14">
               <span class="sr-only">Menu</span>
@@ -181,7 +181,7 @@ const faqSections = [
             <div class="absolute right-0 mt-3 w-72 rounded-2xl border border-white/20 bg-black/85 p-3 text-white shadow-xl backdrop-blur md:w-80">
               <ul class="space-y-1">
                 <li class="sm:hidden">
-                  <a href="#kontakt" class="block rounded-lg px-4 py-3 text-base font-medium hover:bg-white hover:text-black">Napsat</a>
+                  <a href="mailto:info@proele.cz" class="block rounded-lg px-4 py-3 text-base font-medium hover:bg-white hover:text-black">Napsat</a>
                 </li>
                 {topNav.map((item) => (
                   <li>
@@ -595,6 +595,7 @@ const faqSections = [
 
           <div class="mx-auto mt-8 flex max-w-xl flex-col items-center justify-center gap-3 sm:flex-row sm:gap-6">
             <a
+              id="kontakt-telefon"
               href="tel:+420777123456"
               class="group inline-flex w-full items-center gap-3 rounded-2xl bg-white px-5 py-4 text-sm font-semibold text-neutral-900 shadow-soft transition hover:-translate-y-0.5 hover:shadow-lg sm:w-auto"
             >
@@ -625,6 +626,7 @@ const faqSections = [
             </a>
           </div>
 
+          {/* Formulář dočasně skrytý — odeslání není napojeno (Formspree ID chybí). Až bude, znovu zviditelnit a doplnit action.
           <form
             action="https://formspree.io/f/your-form-id"
             method="POST"
@@ -666,6 +668,7 @@ const faqSections = [
               Odeslat poptávku
             </button>
           </form>
+          */}
         </div>
       </section>
 
