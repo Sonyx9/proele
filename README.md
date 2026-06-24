@@ -1,6 +1,6 @@
-# PROELLE Web
+# PROELE Web
 
-Jednopage prezentační web firmy PROELLE postavený na Astro + Tailwind CSS v4.
+Jednopage prezentační web firmy PROELE postavený na Astro + Tailwind CSS v4.
 
 ## Lokální vývoj
 
@@ -18,10 +18,10 @@ npm run preview
 
 ## Nasazení na GitHub Pages
 
-1. Nahrajte projekt do repozitáře `proelle-web`.
+1. Nahrajte projekt do repozitáře `proele-web`.
 2. V `astro.config.mjs` upravte:
    - `site` na `https://<username>.github.io`
-   - `base` na `/proelle-web` (nebo `/` při vlastní doméně).
+   - `base` na `/proele-web` (nebo `/` při vlastní doméně).
 3. GitHub Actions workflow `.github/workflows/deploy.yml` provede build a deployment automaticky po pushi na `main`.
 4. Při vlastní doméně doplňte `public/CNAME`.
 

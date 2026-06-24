@@ -1,4 +1,4 @@
-# Prompty pro fotky webu PROELLE – Google Nano Banana (Gemini 2.5 Flash Image)
+# Prompty pro fotky webu PROELE – Google Nano Banana (Gemini 2.5 Flash Image)
 
 > Sada promptů pro všechny fotky webu. **Hero = editorial styl**, ostatní sekce = **clean / korporátní styl**, ale celkově konzistentní paleta a kompozice.
 >
